@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b2f82c41-1aa3-4e2a-8281-0e27f6f3402c": {
+      "ProjectGuid": "b2f82c41-1aa3-4e2a-8281-0e27f6f3402c",
+      "DisplayName": "Filmstudion.Server",
+      "ColorIndex": 0
+    },
+    "3b57d283-fcc3-4ae5-801e-c2e9242584e6": {
+      "ProjectGuid": "3b57d283-fcc3-4ae5-801e-c2e9242584e6",
+      "DisplayName": "Filmstudion.Business",
+      "ColorIndex": 1
+    },
+    "b7d6f24d-1e22-4457-8b4a-d9651d40590d": {
+      "ProjectGuid": "b7d6f24d-1e22-4457-8b4a-d9651d40590d",
+      "DisplayName": "Filmstudion.DataAccess",
+      "ColorIndex": 2
+    },
+    "36fee047-d1d4-4d93-ad25-5f0027350616": {
+      "ProjectGuid": "36fee047-d1d4-4d93-ad25-5f0027350616",
+      "DisplayName": "Filmstudion.Models",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 4
+}

@@ -1,0 +1,15 @@
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\bin\Debug\net5.0\Filmstudion.Models.deps.json
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\bin\Debug\net5.0\Filmstudion.Models.dll
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\bin\Debug\net5.0\ref\Filmstudion.Models.dll
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\bin\Debug\net5.0\Filmstudion.Models.pdb
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\obj\Debug\net5.0\Filmstudion.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\obj\Debug\net5.0\Filmstudion.Models.AssemblyInfoInputs.cache
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\obj\Debug\net5.0\Filmstudion.Models.AssemblyInfo.cs
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\obj\Debug\net5.0\Filmstudion.Models.csproj.CoreCompileInputs.cache
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\obj\Debug\net5.0\Filmstudion.Models.dll
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\obj\Debug\net5.0\ref\Filmstudion.Models.dll
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\obj\Debug\net5.0\Filmstudion.Models.pdb
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\bin\Debug\net5.0\Filmstudion.Models.runtimeconfig.json
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\bin\Debug\net5.0\Filmstudion.Models.runtimeconfig.dev.json
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\obj\Debug\net5.0\Filmstudion.Models.csproj.AssemblyReference.cache
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Models\obj\Debug\net5.0\Filmstudion.Models.genruntimeconfig.cache
