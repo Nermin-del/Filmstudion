@@ -1,4 +1,6 @@
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\bin\Debug\net5.0\Filmstudion.Business.deps.json
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\bin\Debug\net5.0\Filmstudion.Business.runtimeconfig.json
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\bin\Debug\net5.0\Filmstudion.Business.runtimeconfig.dev.json
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\bin\Debug\net5.0\Filmstudion.Business.dll
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\bin\Debug\net5.0\ref\Filmstudion.Business.dll
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\bin\Debug\net5.0\Filmstudion.Business.pdb
@@ -15,6 +17,4 @@ D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudio
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\obj\Debug\net5.0\Filmstudion.Business.dll
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\obj\Debug\net5.0\ref\Filmstudion.Business.dll
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\obj\Debug\net5.0\Filmstudion.Business.pdb
-D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\bin\Debug\net5.0\Filmstudion.Business.runtimeconfig.json
-D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\bin\Debug\net5.0\Filmstudion.Business.runtimeconfig.dev.json
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.Business\obj\Debug\net5.0\Filmstudion.Business.genruntimeconfig.cache

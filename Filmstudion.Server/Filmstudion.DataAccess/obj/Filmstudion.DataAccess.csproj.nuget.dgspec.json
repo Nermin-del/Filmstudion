@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.DataAccess\\Filmstudion.DataAccess.csproj": {}
+    "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.DataAccess\\Filmstudion.DataAccess.csproj": {}
   },
   "projects": {
-    "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.DataAccess\\Filmstudion.DataAccess.csproj": {
+    "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.DataAccess\\Filmstudion.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.DataAccess\\Filmstudion.DataAccess.csproj",
+        "projectUniqueName": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.DataAccess\\Filmstudion.DataAccess.csproj",
         "projectName": "Filmstudion.DataAccess",
-        "projectPath": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.DataAccess\\Filmstudion.DataAccess.csproj",
+        "projectPath": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.DataAccess\\Filmstudion.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Einar\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.DataAccess\\obj\\",
+        "outputPath": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Einar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.Models\\Filmstudion.Models.csproj": {
-                "projectPath": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.Models\\Filmstudion.Models.csproj"
+              "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.Models\\Filmstudion.Models.csproj": {
+                "projectPath": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.Models\\Filmstudion.Models.csproj"
               }
             }
           }
@@ -65,6 +65,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.13, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
             }
           },
           "imports": [
@@ -100,14 +108,14 @@
         }
       }
     },
-    "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.Models\\Filmstudion.Models.csproj": {
+    "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.Models\\Filmstudion.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.Models\\Filmstudion.Models.csproj",
+        "projectUniqueName": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.Models\\Filmstudion.Models.csproj",
         "projectName": "Filmstudion.Models",
-        "projectPath": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.Models\\Filmstudion.Models.csproj",
+        "projectPath": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.Models\\Filmstudion.Models.csproj",
         "packagesPath": "C:\\Users\\Einar\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\filmstudion123\\Filmstudion.Server\\Filmstudion.Models\\obj\\",
+        "outputPath": "D:\\Git\\Repos\\Dynamiska webbsystem 2\\Filmstudion\\Filmstudion.Server\\Filmstudion.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Einar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -157,6 +165,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.13, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
             }
           },
           "imports": [

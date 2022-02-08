@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Filmstudion.Models.Film;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,6 @@ namespace Filmstudion.Business.DTOs.Film.Interface
         public int FilmCopies { get; set; }
         public DateTime Created { get; set; }
         public DateTime Established { get; set; }
+        public byte[] Picture { get; set; }
     }
 }

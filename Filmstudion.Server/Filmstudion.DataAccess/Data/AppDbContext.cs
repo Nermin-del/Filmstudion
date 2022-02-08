@@ -3,6 +3,8 @@ using System;
 using Filmstudion.Models.FilmStudio;
 using Filmstudion.Models.Film;
 using Filmstudion.Models.Users;
+using Filmstudion.Models.FilmStudio.Interface;
+using Filmstudion.Models.Filmstudio;
 
 namespace Filmstudion.DataAccess
 {
@@ -15,8 +17,7 @@ namespace Filmstudion.DataAccess
 
         public DbSet<Film> Film { get; set; }
         public DbSet<FilmStudio> FilmStudioUser { get; set; }
-        
-        //public DbSet<User> User { get; set; }
-        
+        public DbSet<User> User { get; set; } 
     }
 }
+

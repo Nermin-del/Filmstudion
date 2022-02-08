@@ -1,4 +1,5 @@
 ﻿using Filmstudion.Business.DTOs.Film.Interface;
+using Filmstudion.Models.Film;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

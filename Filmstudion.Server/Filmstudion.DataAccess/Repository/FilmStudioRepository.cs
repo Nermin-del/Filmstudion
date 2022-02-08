@@ -1,6 +1,8 @@
 ﻿using filmstudion.server;
 using Filmstudion.DataAccess.Repository.Interface;
+using Filmstudion.Models.Filmstudio;
 using Filmstudion.Models.FilmStudio;
+using Filmstudion.Models.FilmStudio.Interface;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -15,18 +17,19 @@ namespace Filmstudion.DataAccess.Repositorys
 {
     public class FilmStudioRepository : IFilmStudioRepository
     {
-        private readonly AppDbContext _db;
-        private readonly AppSettings _appSettings;
+        private readonly AppDbContext db;
+        private readonly AppSettings appSettings;
+
 
         public FilmStudioRepository(AppDbContext db, IOptions<AppSettings> appsettings)
         {
-            _db = db;
-            _appSettings = appsettings.Value;
+            this.db = db;
+            this.appSettings = appsettings.Value;
         }
 
         public FilmStudio Authenticate(string username, string password)
         {
-            var user = _db.FilmStudioUser.SingleOrDefault(x => x.Username == username && x.Password == password);
+            var user = db.FilmStudioUser.SingleOrDefault(x => x.Username == username && x.Password == password);
 
             //user not found
             if (user == null)
@@ -36,12 +39,13 @@ namespace Filmstudion.DataAccess.Repositorys
 
             //if user was found generate JWT Token
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                    new Claim(ClaimTypes.Name, user.Id.ToString()),
+                    new Claim(ClaimTypes.Role,user.Role)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials
@@ -57,26 +61,42 @@ namespace Filmstudion.DataAccess.Repositorys
 
         public bool IsUniqueUser(string username)
         {
-            throw new NotImplementedException();
+            var user = db.FilmStudioUser.SingleOrDefault(x => x.Username == username);
+
+            // return null if user is not found
+            if (user == null)
+                return true;
+
+            return false;
         }
 
         public FilmStudio Register(string username, string password)
         {
+            FilmStudio user = new FilmStudio()
+            {
+                Username = username,
+                Password = password,
+                Role = "Filmstudio"
+            };
+
+            db.FilmStudioUser.Add(user);
+            db.SaveChanges();
+            user.Password = "";
+            return user;
+        }
+
+        public FilmStudio RentFilmCopy()
+        {
             throw new NotImplementedException();
         }
+
+        public ICollection<FilmStudio> GetFilmStudios()
+        {
+            return db.FilmStudioUser.ToList();
+            
+        }
+
     }
 }
 
 
-// Skapa filmstudio bara genom att registrera.
-// 1 admin login, 1 filmstudio login + registrering = filmstudioobjekt
-
-//skapa 2 typer användare en admin och en filmstudio.
-
-//Klient = logga in som filmstudio eller admin (2 olika flikar navigering)
-
-//kolla igenom authenticating api
-
-
-
-//Efter du är klar med detta. Kolla hur du lånar film osv för filmstudio.

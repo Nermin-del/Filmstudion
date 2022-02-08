@@ -5,22 +5,26 @@ using Filmstudion.DataAccess.Repository.Interface;
 using Filmstudion.Models.DTOs;
 using Filmstudion.Models.DTOs.Film;
 using Filmstudion.Models.Film;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace Filmstudion.Server.Controllers
 {
+    [Authorize(Roles = "admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class FilmController : ControllerBase
     {
         
-        private IFilmService filmService;
-        private readonly IMapper _mapper;
+        private readonly IFilmService filmService;
+        private readonly IMapper mapper;
         public FilmController(IMapper mapper, IFilmService filmService)
         {
-            _mapper = mapper;
+            this.mapper = mapper;
             this.filmService = filmService;
             
         }
@@ -29,20 +33,54 @@ namespace Filmstudion.Server.Controllers
         /// Get list of all films
         /// </summary>
         /// <returns></returns>
+        /// 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult GetAllFilms()
         {
-            var filmList = filmService.GetFilms();
+            
+            var role = "";
+            var token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
+            
+            if(token != null && token != "") {
+                    var handler = new JwtSecurityTokenHandler();
+                    var jsonToken = handler.ReadJwtToken(token);
 
-            var filmDto = new List<FilmDto>();
-
-
-            foreach (var film in filmList)
-            {
-                filmDto.Add(_mapper.Map<FilmDto>(film));
+                    foreach (var claim in jsonToken.Claims) {
+                        if (claim.Type == "role") {
+                            role = claim.Value;
+                        }
+                    }
             }
 
-            return Ok(filmDto);
+            if(role == "admin" || role == "filmstudio") 
+            {
+                var filmList = filmService.GetFilms();
+
+                var filmDto = new List<FilmAdminDto>();
+
+
+                foreach (var film in filmList)
+                {
+                    filmDto.Add(mapper.Map<FilmAdminDto>(film));
+                }
+
+                return Ok(filmDto);
+            }
+            else 
+            {
+                var filmList = filmService.GetFilms();
+
+                var filmDto = new List<FilmDto>();
+
+
+                foreach (var film in filmList)
+                {
+                    filmDto.Add(mapper.Map<FilmDto>(film));
+                }
+
+                return Ok(filmDto);
+            }
         }
 
         /// <summary>
@@ -51,16 +89,40 @@ namespace Filmstudion.Server.Controllers
         /// <param name="filmId"> Get Id of a specific film</param>
         /// <returns></returns>
         [HttpGet("{filmId:int}", Name = "GetFilmById")]
+        [AllowAnonymous]
         public IActionResult GetFilmById(int filmId)
         {
+            var role = "";
+            var token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
+            
+            if(token != null && token != "") {
+                    var handler = new JwtSecurityTokenHandler();
+                    var jsonToken = handler.ReadJwtToken(token);
+
+                    foreach (var claim in jsonToken.Claims) {
+                        if (claim.Type == "role") {
+                            role = claim.Value;
+                        }
+                    }
+            }
+
             var film = filmService.GetFilmById(filmId);
             if (film == null)
             {
                 return NotFound();
             }
 
-            var filmDto = _mapper.Map<FilmDto>(film);
-            return Ok(filmDto);
+            if(role == "admin" || role == "filmstudio") 
+            {
+                var filmAdminDto = mapper.Map<FilmAdminDto>(film);
+                return Ok(filmAdminDto);
+            }
+            else 
+            {
+                var filmDto = mapper.Map<FilmDto>(film);
+                return Ok(filmDto);
+            }
+
         }
 
         /// <summary>
@@ -82,7 +144,7 @@ namespace Filmstudion.Server.Controllers
                 return StatusCode(404, ModelState);
             }
 
-            var filmItem = _mapper.Map<Film>(model);
+            var filmItem = mapper.Map<Film>(model);
 
             if (!filmService.CreateFilm(filmItem))
             {
@@ -99,6 +161,8 @@ namespace Filmstudion.Server.Controllers
         /// <param name="Id"></param>
         /// <param name="model">Update film</param>
         /// <returns></returns>
+        /// 
+        [Authorize(Roles = "admin")]
         [HttpPatch("{filmId:int}", Name = "UpdateFilm")]
         public IActionResult UpdateFilm(int Id, [FromBody] UpdateFilmDto model)
         {
@@ -107,7 +171,7 @@ namespace Filmstudion.Server.Controllers
                 return BadRequest(ModelState);
             }
 
-            var filmItem = _mapper.Map<Film>(model);
+            var filmItem = mapper.Map<Film>(model);
 
             if (!filmService.UpdateFilm(filmItem))
             {

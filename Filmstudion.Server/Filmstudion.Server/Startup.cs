@@ -31,24 +31,23 @@ namespace Filmstudion.Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddDbContext<AppDbContext>
                 (options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IFilmRepository, FilmRepository>();
             services.AddScoped<IFilmStudioRepository, FilmStudioRepository>();
             services.AddTransient<IFilmStudioService, FilmStudioService>();
-            services.AddScoped<IUserRegisterRepository, UserRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddTransient<IUserService, UserService>();
             services.AddTransient<IFilmService, FilmService>();
             services.AddAutoMapper(typeof(MappingProfiles));
-            //services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-            //services.AddSwaggerGen();
-            services.AddControllers();
+         
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
 
             var appSettings = appSettingsSection.Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
-
 
             services.AddAuthentication(x =>
             {
@@ -68,8 +67,7 @@ namespace Filmstudion.Server
                 };
             });
 
-
-
+            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -78,7 +76,28 @@ namespace Filmstudion.Server
                     Version = "v1"
 
                 });
-            });
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Insert Token",
+                    Name = "Authorization",
+                    BearerFormat = "JWT",
+                    Scheme = "bearer"
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                {
+                    new OpenApiSecurityScheme {
+                        Reference = new OpenApiReference {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                    }
+                },
+                new string[] {}
+            }
+        });
+        });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

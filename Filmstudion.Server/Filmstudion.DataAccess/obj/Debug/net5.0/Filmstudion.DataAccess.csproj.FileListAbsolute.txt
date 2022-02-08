@@ -1,4 +1,6 @@
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\bin\Debug\net5.0\Filmstudion.DataAccess.deps.json
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\bin\Debug\net5.0\Filmstudion.DataAccess.runtimeconfig.json
+D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\bin\Debug\net5.0\Filmstudion.DataAccess.runtimeconfig.dev.json
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\bin\Debug\net5.0\Filmstudion.DataAccess.dll
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\bin\Debug\net5.0\ref\Filmstudion.DataAccess.dll
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\bin\Debug\net5.0\Filmstudion.DataAccess.pdb
@@ -13,6 +15,4 @@ D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudio
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\obj\Debug\net5.0\Filmstudion.DataAccess.dll
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\obj\Debug\net5.0\ref\Filmstudion.DataAccess.dll
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\obj\Debug\net5.0\Filmstudion.DataAccess.pdb
-D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\bin\Debug\net5.0\Filmstudion.DataAccess.runtimeconfig.json
-D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\bin\Debug\net5.0\Filmstudion.DataAccess.runtimeconfig.dev.json
 D:\Git\Repos\Dynamiska webbsystem 2\filmstudion123\Filmstudion.Server\Filmstudion.DataAccess\obj\Debug\net5.0\Filmstudion.DataAccess.genruntimeconfig.cache

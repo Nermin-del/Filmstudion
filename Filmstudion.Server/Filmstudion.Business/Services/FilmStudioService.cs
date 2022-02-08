@@ -1,11 +1,9 @@
 ﻿using Filmstudion.Business.Services.Interface;
 using Filmstudion.DataAccess.Repository.Interface;
+using Filmstudion.Models.Filmstudio;
 using Filmstudion.Models.FilmStudio;
-using System;
+using Filmstudion.Models.FilmStudio.Interface;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Filmstudion.Business.Services
 {
@@ -36,6 +34,10 @@ namespace Filmstudion.Business.Services
             return repository.Register(username, password);
         }
 
+        public ICollection<FilmStudio> GetFilmStudios()
+        {
+            return repository.GetFilmStudios();
+        }
     }
 }
 

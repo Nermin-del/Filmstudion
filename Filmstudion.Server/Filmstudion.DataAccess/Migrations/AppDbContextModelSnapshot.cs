@@ -32,6 +32,9 @@ namespace Filmstudion.DataAccess.Migrations
                     b.Property<int>("FilmCopies")
                         .HasColumnType("int");
 
+                    b.Property<byte[]>("Picture")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -39,6 +42,32 @@ namespace Filmstudion.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Film");
+                });
+
+            modelBuilder.Entity("Filmstudion.Models.Film.FilmCopies", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FilmId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("FilmStudioId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StudioId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FilmStudioId");
+
+                    b.ToTable("FilmCopies");
                 });
 
             modelBuilder.Entity("Filmstudion.Models.FilmStudio.FilmStudio", b =>
@@ -60,6 +89,37 @@ namespace Filmstudion.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FilmStudioUser");
+                });
+
+            modelBuilder.Entity("Filmstudion.Models.Users.User", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("Filmstudion.Models.Film.FilmCopies", b =>
+                {
+                    b.HasOne("Filmstudion.Models.FilmStudio.FilmStudio", null)
+                        .WithMany("FilmCopies")
+                        .HasForeignKey("FilmStudioId");
+                });
+
+            modelBuilder.Entity("Filmstudion.Models.FilmStudio.FilmStudio", b =>
+                {
+                    b.Navigation("FilmCopies");
                 });
 #pragma warning restore 612, 618
         }
